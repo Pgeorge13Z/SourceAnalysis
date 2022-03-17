@@ -582,7 +582,7 @@ int main(void)
   printf("%d\n",ntohs(client_name.sin_port));//测试打印客户端端口
  /*启动线程处理新的连接 */
  if (pthread_create(&newthread , NULL, accept_request, (void*)&client_sock) != 0)
-   perror("pthread_create");
+   perror("pthread_create"); //抛出异常
  }
 //关闭server socket
  close(server_sock);
